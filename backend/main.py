@@ -25,6 +25,7 @@ from fastapi.responses import JSONResponse
 import google.generativeai as genai
 
 api_key = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_API_KEY = api_key
 if not api_key or api_key == "your_gemini_api_key_here":
     print("[CRITICAL ERROR] GEMINI_API_KEY is missing! Using fallback incident commander.")
 else:
