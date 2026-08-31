@@ -13,7 +13,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.460.0",
     "mapbox-gl": "^3.29.0",
-    "next": "15.1.0",
+    "next": "^15.1.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-map-gl": "^7.1.9",
