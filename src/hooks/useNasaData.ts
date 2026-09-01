@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import type { NasaFireEvent, NasaApiResponse } from "@/lib/types";
+import type { NasaFireEvent, NasaApiResponse } from "../lib/types";
 
 /* ═══════════════════════════════════════════════════════════════
    useNasaData — Client hook that polls /api/nasa for live
