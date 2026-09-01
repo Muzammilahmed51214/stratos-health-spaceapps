@@ -6,7 +6,7 @@ import { AlertCircle, RefreshCw } from "lucide-react";
 import TopBar from "../components/TopBar";
 import LeftDock from "../components/LeftDock";
 import RightDock from "../components/RightDock";
-import TimelineSlider from "../components/TimelineSlider";
+import TimelineSlider from "../components/TimelinesSlider";
 import Footer from "../components/Footer";
 import { useBackendTelemetry } from "../hooks/useBackendTelemetry";
 import type { LayerToggles } from "../lib/types";
