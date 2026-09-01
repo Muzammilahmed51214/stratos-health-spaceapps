@@ -1,6 +1,6 @@
 """
 Main entrypoint for StratosHealth FastAPI application.
-Configures Google Gemini AI Reasoning Engine, CORS middleware for Next.js (localhost:3000),
+Configures Google Gemini AI Reasoning Engine, CORS middleware for Next.js,
 database table initialization on startup, and REST API routing.
 """
 
@@ -51,15 +51,15 @@ logging.basicConfig(
 async def lifespan(app: FastAPI):
     """
     Application lifespan context manager.
-    Initializes database schema and warms cache on startup.
+    Initializes database schema and warms cache on startup with live telemetry.
     """
     logger.info("Initializing SQLite database tables...")
     Base.metadata.create_all(bind=engine)
 
-    # Warm cache with initial wildfire and air quality telemetry
+    # Warm cache with initial wildfire and live air quality telemetry from APIs
     db = SessionLocal()
     try:
-        logger.info("Pre-warming telemetry cache...")
+        logger.info("Pre-warming telemetry cache with live NASA/EPA feeds...")
         await services.fetch_and_cache_fires(db=db, force_refresh=False)
         services.get_pacific_nw_air_quality(db=db)
     except Exception as ex:
@@ -87,13 +87,12 @@ app = FastAPI(
 # ═══════════════════════════════════════════════════════════════
 # CORS Configuration
 # ═══════════════════════════════════════════════════════════════
-# Allows seamless communication with Next.js frontend running on localhost:3000
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     "http://localhost:3001",
     "http://127.0.0.1:3001",
-    "*",  # Allow all for hackathon flexibility
+    "*",  # Allow all for hackathon deployment flexibility
 ]
 
 app.add_middleware(
@@ -104,7 +103,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API endpoints
+# Include API endpoints from routes.py
 app.include_router(routes.router)
 
 
