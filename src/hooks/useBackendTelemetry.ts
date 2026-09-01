@@ -13,8 +13,8 @@ import {
   VULNERABILITY_STATS,
 } from "../lib/mock-data";
 
-const PRIMARY_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000";
+const PRIMARY_URL = 
+  process.env.NEXT_PUBLIC_BACKEND_URL || "https://stratos-health-spaceapps.onrender.com";
 
 // Secondary fallback in case of IPv4 vs IPv6 resolution differences on Windows
 const SECONDARY_URL = PRIMARY_URL.includes("127.0.0.1")
