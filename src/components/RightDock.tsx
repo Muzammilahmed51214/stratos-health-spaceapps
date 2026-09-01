@@ -16,8 +16,8 @@ import {
   Clock,
   Loader2,
 } from "lucide-react";
-import { WILDFIRE_DATA, FACILITIES_DATA } from "@/lib/mock-data";
-import type { TacticalAdvisoryResponse } from "@/lib/types";
+import { WILDFIRE_DATA, FACILITIES_DATA } from "../lib/mock-data";
+import type { TacticalAdvisoryResponse } from "../lib/types";
 
 // ─── Component Props ─────────────────────────────────────────
 
