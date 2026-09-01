@@ -1,7 +1,7 @@
 "use client";
 
 import { Layers, Activity, Radio, Loader2 } from "lucide-react";
-import type { LayerToggles, AirQualityResponse } from "@/lib/types";
+import type { LayerToggles, AirQualityResponse } from "../lib/types";
 
 // ─── Layer Configuration ─────────────────────────────────────
 
