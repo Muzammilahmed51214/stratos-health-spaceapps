@@ -6,7 +6,7 @@ import type {
   AirQualityResponse,
   TacticalAdvisoryResponse,
   BackendTelemetryState,
-} from "@/lib/types";
+} from "../lib/types";
 import {
   WILDFIRE_DATA,
   AI_ADVISORY,
