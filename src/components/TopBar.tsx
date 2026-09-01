@@ -2,7 +2,22 @@
 
 import { useState, useEffect } from "react";
 import { Shield, AlertTriangle, Radio, Satellite, Server } from "lucide-react";
+export interface RegionPreset {
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  zoom: number;
+}
 
+export const REGION_PRESETS: RegionPreset[] = [
+  { id: "global", name: "🌍 Global Overview", lat: 20, lng: 0, zoom: 1.8 },
+  { id: "pacific_nw", name: "🌲 Pacific NW (USA)", lat: 44.0582, lng: -121.3153, zoom: 9.5 },
+  { id: "california", name: "🔥 California (USA)", lat: 37.7749, lng: -122.4194, zoom: 7 },
+  { id: "mediterranean", name: "🏛️ Mediterranean (S. Europe)", lat: 38.9637, lng: 22.1325, zoom: 6 },
+  { id: "amazon", name: "🌴 Amazon Basin (Brazil)", lat: -3.4653, lng: -62.2159, zoom: 6 },
+  { id: "australia", name: "🦘 Eastern Australia", lat: -33.8688, lng: 151.2093, zoom: 7 },
+];
 interface TopBarProps {
   urgencyLevel?: string;
   isOffline?: boolean;
