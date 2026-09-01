@@ -11,7 +11,7 @@ import {
   Thermometer,
   ShieldAlert,
 } from "lucide-react";
-import type { FireGeoJSONFeature, FireFeatureProperties } from "@/lib/types";
+import type { FireGeoJSONFeature, FireFeatureProperties } from "../lib/types";
 
 /* ═══════════════════════════════════════════════════════════════
    EmergencyMarkerPopup — Glassmorphic popup rendered inside
