@@ -1,7 +1,7 @@
 "use client";
 
 import { Play, Pause, SkipBack, SkipForward, Clock } from "lucide-react";
-import { TIMELINE_MAX_HOURS, TIMELINE_START } from "@/lib/mock-data";
+import { TIMELINE_MAX_HOURS, TIMELINE_START } from "../lib/mock-data";
 
 // ─── Types ───────────────────────────────────────────────────
 
