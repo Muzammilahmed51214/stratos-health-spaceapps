@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import type { NasaFireEvent } from "@/lib/types";
+import type { NasaFireEvent } from "../../../lib/types";
 
 /* ═══════════════════════════════════════════════════════════════
    /api/nasa — Aggregates fire & air-quality data from:
