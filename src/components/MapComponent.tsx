@@ -30,12 +30,12 @@ import {
   NO2_DATA_POINTS,
   PM25_DATA_POINTS,
   toHeatmapGeoJSON,
-} from "@/lib/mock-data";
-import { generateCirclePolygon } from "@/lib/utils";
+} from "../lib/mock-data";
+import { generateCirclePolygon } from "../lib/utils";
 import EmergencyMarkerPopup, {
   type PopupEventData,
-} from "@/components/EmergencyMarkerPopup";
-import type { LayerToggles, FireGeoJSONFeature } from "@/lib/types";
+} from "./components/EmergencyMarkerPopup";
+import type { LayerToggles, FireGeoJSONFeature } from "../lib/types";
 import "mapbox-gl/dist/mapbox-gl.css";
 
 // ─── Config ──────────────────────────────────────────────────
