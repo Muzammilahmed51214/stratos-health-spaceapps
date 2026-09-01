@@ -34,7 +34,7 @@ import {
 import { generateCirclePolygon } from "../lib/utils";
 import EmergencyMarkerPopup, {
   type PopupEventData,
-} from "./components/EmergencyMarkerPopup";
+} from "./EmergencyMarkerPopup";
 import type { LayerToggles, FireGeoJSONFeature } from "../lib/types";
 import "mapbox-gl/dist/mapbox-gl.css";
 
