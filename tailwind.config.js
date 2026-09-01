@@ -6,7 +6,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        obsidian: "#0a0a0f",
+        "telemetry-blue": "#38bdf8",
+      },
+    },
   },
   plugins: [],
 }
