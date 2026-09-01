@@ -21,11 +21,15 @@ export const REGION_PRESETS: RegionPreset[] = [
 interface TopBarProps {
   urgencyLevel?: string;
   isOffline?: boolean;
+  selectedRegion?: RegionPreset;
+  onSelectRegion?: (region: RegionPreset) => void;
 }
 
 export default function TopBar({
   urgencyLevel = "LEVEL 4 - CRITICAL",
   isOffline = false,
+  selectedRegion = REGION_PRESETS[1],
+  onSelectRegion,
 }: TopBarProps) {
   const [utcTime, setUtcTime] = useState<string>("");
 
@@ -81,13 +85,25 @@ export default function TopBar({
 
         <div className="w-px h-5 bg-slate-700/60" />
 
-        {/* Sector */}
+                {/* Region / Sector Dropdown */}
         <div className="flex items-center gap-2">
-          <Radio className="w-3.5 h-3.5 text-slate-600" />
-          <span className="text-slate-500 text-xs">SECTOR</span>
-          <span className="font-mono text-xs text-white/80">PACIFIC NW</span>
+          <Radio className="w-3.5 h-3.5 text-cyan-400" />
+          <span className="text-slate-500 text-xs">SECTOR:</span>
+          <select
+            value={selectedRegion?.id}
+            onChange={(e) => {
+              const found = REGION_PRESETS.find((r) => r.id === e.target.value);
+              if (found && onSelectRegion) onSelectRegion(found);
+            }}
+            className="bg-slate-900/90 text-cyan-300 font-mono text-xs px-2 py-1 rounded border border-slate-700/80 focus:outline-none focus:border-cyan-400 cursor-pointer shadow-sm"
+          >
+            {REGION_PRESETS.map((r) => (
+              <option key={r.id} value={r.id} className="bg-slate-900 text-white">
+                {r.name}
+              </option>
+            ))}
+          </select>
         </div>
-
         <div className="w-px h-5 bg-slate-700/60" />
 
         {/* UTC Clock */}
