@@ -3,17 +3,17 @@
 import { useState, useEffect, useCallback } from "react";
 import dynamic from "next/dynamic";
 import { AlertCircle, RefreshCw } from "lucide-react";
-import TopBar from "@/components/TopBar";
-import LeftDock from "@/components/LeftDock";
-import RightDock from "@/components/RightDock";
-import TimelineSlider from "@/components/TimelineSlider";
-import Footer from "@/components/Footer";
-import { useBackendTelemetry } from "@/hooks/useBackendTelemetry";
-import type { LayerToggles } from "@/lib/types";
+import TopBar from "../components/TopBar";
+import LeftDock from "../components/LeftDock";
+import RightDock from "../components/RightDock";
+import TimelineSlider from "../components/TimelinesSlider";
+import Footer from "../components/Footer";
+import { useBackendTelemetry } from "../hooks/useBackendTelemetry";
+import type { LayerToggles } from "../lib/types";
 
 // ─── Dynamic Imports (SSR-safe for Mapbox GL) ────────────────
 
-const MapComponent = dynamic(() => import("@/components/MapComponent"), {
+const MapComponent = dynamic(() => import("../components/MapComponent"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full flex items-center justify-center bg-obsidian">
